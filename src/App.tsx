@@ -4,7 +4,11 @@ import {useState, useEffect} from "react";
 import UsersList from "./components/UsersList";
 import Form from "./components/Form"
 
-const App = () => {
+type Props = {
+  usersList?: []
+}
+
+const App = (props: Props) => {
   const [users, setUsers] = useState([])
   useEffect(() => {
     fetch("https://jsonplaceholder.typicode.com/todos")
@@ -19,7 +23,6 @@ const App = () => {
   return (
     <div className="App">
       <Form />
-      {/* @ts-ignore}} */ }
       <UsersList usersList={users} />
     </div>
   );

@@ -5,7 +5,7 @@ import UsersList from "./components/UsersList";
 import Form from "./components/Form"
 
 type Props = {
-  usersList?: []
+  usersList: []
 }
 
 const App = (props: Props) => {

@@ -2,13 +2,18 @@ import * as React from "react";
 import useForm from "./useForm";
 
 const Form = () => {
-  let userNameRef = useForm().userNameRef;
-  let passwordRef = useForm().passwordRef;
-  let handleFormChanges = useForm().handleFormChanges;
+  const {
+    userNameRef,
+    passwordRef,
+    handleFormChanges
+  } = useForm();
+
   return (
     <form>
-      <input ref={userNameRef} onChange={handleFormChanges} type="text" name="username"/>
-      <input ref={passwordRef} onChange={handleFormChanges} type="text" name="password"/>
+      <label htmlFor="username">Username</label>
+      <input id="username" ref={userNameRef} onChange={handleFormChanges} type="text" name="username"/>
+      <label htmlFor="password">Password</label>
+      <input id="password" ref={passwordRef} onChange={handleFormChanges} type="text" name="password"/>
     </form>
   )
 }

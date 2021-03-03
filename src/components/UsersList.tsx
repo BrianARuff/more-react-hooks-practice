@@ -5,11 +5,12 @@ const UsersList = (props: any) => {
     <>
       <ul>
         {
-          props.usersList.map((user: any) => {
-            return (
-              <li key={user.id}>{user.title}</li>
-            )
-          })
+          props.usersList ? props.usersList.map((user: any) => {
+              return (
+                <li key={user.id}>{user.title}</li>
+              )
+            })
+            : null
         }
       </ul>
     </>
